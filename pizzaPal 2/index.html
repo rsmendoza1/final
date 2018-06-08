@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width, initial-scale= 1">
+    <title>Pizza Pal</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="page-header">
+            <h1>Pizza Pal</h1><br>
+            <div class="jumbotron">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus faucibus orci eu vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam sit amet viverra nisl. Duis nec ligula dolor. Maecenas sodales elit tortor, sed porttitor purus pellentesque sed. Sed ut turpis lacinia, dignissim nibh eu, consectetur ligula. Aliquam erat volutpat.</p><br>
+                <div class="btn-group btn-group-lg" role="group">
+                    <button type="button" class="btn btn-default">Delivery Location</button>
+                    <button type="button" class="btn btn-default">Build Your Order</button>
+                    <button type="button" class="btn btn-default">Billing Info</button>
+                </div>
+            </div>
+        </div>
+
+        <!--PART ONE, DELIVERY LOCATION-->
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <h2><strong>Delivery Location</strong></h2>
+            </div>
+
+            <!--STEP ONE-->
+            <div class="form-group col-md-6">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" class="form-control" id="inputFirstName" placeholder="Juanito">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" class="form-control" id="inputLastName" placeholder="Frijoles">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+        </div>
+
+        <!-- STEP 2 / "OTHER" TEXT BOX -->
+
+        <!--div class="form-group">
+            <label for=inputAddressType>Address Type</label>
+            <select name="optionOther" onchange='CheckOption(this.value);' class="form-control">
+                <option selected>Choose...</option>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+                <option value="Business">Business</option>
+                <option value="Campus">Campus</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Dorm">Dorm</option>
+                <option value="other">Other</option>
+            </select><br>
+            <input type="text" name="optionOther" id="optionOther" class="form-control" style='display:none;' />
+        </div-->
+
+        <ORG FOR INPUT ADDRESS, SEE ABOVE>
+            <div class="form-group">
+                <label for="inputAddressType">Address Type</label>
+                <select id="inputAddressType" class="form-control">
+                <option selected>Choose...</option>
+                       <option>House</option>
+                       <option>Apartment</option>
+                       <option>Business</option>
+                       <option>Campus</option>
+                       <option>Hotel</option>
+                       <option>Dorm</option>
+                       <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>CA</option>
+        <option>HI</option>
+        <option>IL</option>
+      </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="inputZip">Zip</label>
+                    <input type="text" class="form-control" id="inputZip">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputZip">Email</label>
+                    <input type="text" class="form-control" id="inputEmail">
+                </div>
+            </div>
+
+            <!-- NEED STEP 3 / VALIDATION -->
+
+            <!--button type="submit" class="btn btn-primary">Submit My Info</button><br><br>
+        <div class="row">
+
+            <!--YOUR CART -->
+
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <h2><strong>Your Order</strong></h2>
+                    <span class="badge badge-secondary badge-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Product name</h6>
+                            <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Second product</h6>
+                            <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$8</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h6 class="my-0">Third item</h6>
+                            <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between" id="totalInput">
+                        <span>Total (USD)</span>
+                        <strong>$0</strong>
+                    </li>
+                </ul>
+                </div>
+
+                <!--PART 2, BUILD YOUR PIZZA-->
+
+                <div class="col-md-8 order-md-1">
+                    <form class="needs-validation" novalidate>
+                        <h2><strong>Build Your Order</strong></h2>
+                        <p>Choose Your Crust</p>
+                        <!--STEP 1 -->
+                        <!--ORG-->
+                        <!--div class="form-check">
+                        <input class="form-check-input" type="radio" name="doughOptions" id="doughOption1" value="option1" checked>
+                        <label class="form-check-label" for="handTossed">Hand Tossed</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="doughOptions" id="doughOption2" value="option2">
+                        <label class="form-check-label" for="thinCrust">Thin Crust</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="doughOptions" id="doughOption3" value="option3">
+                        <label class="form-check-label" for="newYorkStyle">New York Style</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="doughOptions" id="doughOption4" value="option3">
+                        <label class="form-check-label" for="glutenFree">Gluten Free</label>
+                    </div><br-->
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" onclick="javascript:check();" name="radiocheck" id="handTossed">
+                            <label class="form-check-label" for="handTossed">Hand Tossed</label>
+
+                            <!-- OPTION 1, HAND TOSSED -->
+
+                            <div id="option1" name="option1" style="display:none;">
+                                <select name="p_author" id="p_author">
+                         <option value="A">Small ($9.99)</option>
+                         <option value="B">Medium ($12.99)</option>
+                         <option value="C">Large ($14.99)</option>
+                        </select>
+                            </div><br>
+                        </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onclick="javascript:check();" name="radiocheck" id="thinCrust">
+                    <label class="form-check-label" for="thinCrust">Thin Crust</label>
+
+                    <!-- OPTION 2, THIN CRUST-->
+
+                    <div id="option2" name="option2" style="display:none">
+                        <select name="p_author" id="p_author">
+                        <option value="D">Medium ($11.99)</option>
+                        <option value="E">Large ($13.99)</option>
+                        </select>
+                    </div><br>
+
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onclick="javascript:check();" name="radiocheck" id="newYork">
+                    <label class="form-check-label" for="newYorkStyle">New York Style</label>
+
+                    <!--OPTION 3, NEW YORK STYLE-->
+
+                    <div id="option3" name="option3" style="display:none">
+                        <select name="p_author" id="p_author">
+                      <option value="F">Large ($16.99)</option>
+                      <option value="G">Extra Large($19.99)</option>
+                    </select>
+                    </div><br>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" onclick="javascript:check();" name="radiocheck" id="gluten">
+                    <label class="form-check-label" for="glutenFree">Gluten Free</label>
+
+                    <!--OPTION 4, GLUTEN FREE -->
+
+                    <div id="option4" name="option4" style="display:none">
+                        <select name="p_author" id="p_author">
+                    <option value="H">Small ($10.99)</option>
+                    </select>
+                    </div>
+                </div><br>
+
+                <!--STEP 3 -->
+
+                <div class="form-group col-md-10">
+                    <label for="inputCheese">Cheese Options</label>
+                    <select id="inputCheeseOptions" onchange="updateTotal()" class="form-control">
+                <option value="0" selected>Choose...</option>
+                       <option value="0">Light: no charge</option>
+                       <option value="0">Normal (default): no charge</option>
+                       <option value="2.99">Extra: +$2.99</option>
+                       <option value="3.99">Double: +$3.99</option>
+                </select>
+                </div>
+
+                <!--STEP 4 -->
+
+                <div class="form-group col-md-10">
+                    <label for="inputSauce">Sauce Options</label>
+                    <select id="inputSauceOptions" class="form-control">
+                <option selected>Choose...</option>
+                       <option>Light: no charge</option>
+                       <option>Normal (default): no charge</option>
+                       <option>Extra: +$2.99</option>
+                       <option>Double: +$3.99</option>
+                </select>
+                </div>
+
+                <!-- STEP 5 -->
+                <p>Toppings Options ($0.99 each)</p>
+                <div class="form-check form-check-inline col-md-8">
+                    <input class="form-check-input" type="checkbox" id="checkBox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Pepperoni</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Sausage</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox4">Ham</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox4" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox5">Bacon</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox5" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox6">Salami</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox6" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox7">Peppers</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox7" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox8">Olives</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox8" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox9">Jalapenos</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox9" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Mushrooms</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox10" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox10">Pineapple</label>
+
+                    <input class="form-check-input" type="checkbox" id="checkBox11" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox11">Onion</label>
+                </div><br><br>
+
+                <button type="submit" class="btn btn-primary">Finished Building Pizza</button><br><br>
+                </form>
+
+                <!-- PART THREE, BILLING INFO-->
+
+                <h2><strong>Billing Info</strong></h2>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 mb-3">
+                        <label for="cc-name">First Name</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                        <small class="text-muted">First as displayed on card</small>
+                        <div class="invalid-feedback">
+                            Name on card is required
+                        </div><br><br>
+                        <label for="cc-name">Last Name</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                        <small class="text-muted">Last name as displayed on card</small>
+                        <div class="invalid-feedback">
+                            Name on card is required
+                        </div><br><br>
+                        <label for="cc-number">Credit card number</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Credit card number is required
+                        </div><br>
+                        <div>
+                            <p>Credit Card Type</p>
+                            <label class="radio-inline"><input type="radio" name="optradio">Visa</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">MasterCard</label>
+                            <label class="radio-inline"><input type="radio" name="optradio">American Express</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-3 mb-3">
+                        <!--ORG-->
+                        <!--label for="cc-expiration">Expiration</label>
+                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Expiration date required
+                        </div-->
+                        <label for="inputMonth">Expiration Month</label>
+                        <select id="inputMonth" class="form-control">
+                        <option selected>Choose..</option>
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                    </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="inputYear">Expiration Year</label>
+                        <select id="inputYear" class="form-control">
+                        <option selected>Choose..</option>
+                        <option value="18"> 2018</option>
+                        <option value="19"> 2019</option>
+                        <option value="20"> 2020</option>
+                        <option value="21"> 2021</option>
+                        <option value="22"> 2022</option>
+                        <option value="23"> 2023</option>
+                </select>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-cvv">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Security code required
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                </div>
+            </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2018 Pizza Pal</p>
+    </footer>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>

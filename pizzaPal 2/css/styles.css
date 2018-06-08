@@ -1,0 +1,28 @@
+.jumbotron {
+    background-color: #2E2D88;
+    color: white;
+}
+
+/* ADDS BORDERS FOR TABS */
+
+.tab-contect {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.nav-tabs {
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 20px;
+    color: gray;
+}
+
+#checkBox {
+    margin-right: 10px;
+    margin-left: 10px;
+    
+}
